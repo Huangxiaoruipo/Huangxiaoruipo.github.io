@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="我的第一个博客, KITOHUANG">
-    <meta name="description" content="">
+    <meta name="description" content="为什么要做自己的博客呢？最根本的原因是林檎大佬说做一个个人博客网站非常有用，记录自己的学习心得、有用的代码块、时间长了也是个人简历说明的一种。正好本人对写作也充满兴趣，平时忙于工作又没时间去写点东西，趁着这个机会也把想做的事情做出来吧。
+选">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -327,10 +328,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -392,7 +487,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="为什么要做自己的博客呢？"><a href="#为什么要做自己的博客呢？" class="headerlink" title="为什么要做自己的博客呢？"></a>为什么要做自己的博客呢？</h3><p>最根本的原因是林檎大佬说做一个个人博客网站非常有用，记录自己的学习心得、有用的代码块、时间长了也是个人简历说明的一种。正好本人对写作也充满兴趣，平时忙于工作又没时间去写点东西，趁着这个机会也把想做的事情做出来吧。</p>
+<h3 id="选用什么方式去部署个人博客？"><a href="#选用什么方式去部署个人博客？" class="headerlink" title="选用什么方式去部署个人博客？"></a>选用什么方式去部署个人博客？</h3><p>一开始考虑的是仿照优秀的博客，使用原生代码去写自己的博客网站，在搭建网站的过程中去学习前端的技术。不过在做了两天的准备后，发现一个完善的博客框架和好看的前端页面是我目前做不出来的，大受打击。最终选择使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>+<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>来部署个人网站。</p>
+<p>Hexo正如它所说的一样是如此的快速、高效、简洁。基于Node.js的优点，Hexo很快的将本地Markdown页面渲染成网页，另外有大量的插件可以使用，支持一键部署；当然，最重要的还是它的主题很多，使用起来很方便，只需要根据说明文档修改就能制作出来一具有个人特色的个人博客。</p>
+<h3 id="成果及感悟"><a href="#成果及感悟" class="headerlink" title="成果及感悟"></a>成果及感悟</h3><p>搭建个人博客的过程中遇到了各种奇奇怪怪的问题，把人折腾的够呛，不过在经历了一天的不懈努力，大体的框架终于搭建出来了！！！！撒花~！</p>
+<p>本博客使用到的资源环境如下：</p>
+<ul>
+<li>操作系统：Windows 10</li>
+<li>Node,js</li>
+<li>Hexo</li>
+<li>Git</li>
+<li>一个GitHub账号</li>
+</ul>
+<p>成品展示~</p>
+<p><img src="/2022/04/15/wo-de-di-yi-ge-bo-ke/image-20220416212749962.png"></p>
+
                 
             </div>
             <hr/>
@@ -623,6 +732,87 @@
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
