@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一个博客, KITOHUANG">
-    <meta name="description" content="为什么要做自己的博客呢？最根本的原因是林檎大佬说做一个个人博客网站非常有用，记录自己的学习心得、有用的代码块、时间长了也是个人简历说明的一种。正好本人对写作也充满兴趣，平时忙于工作又没时间去写点东西，趁着这个机会也把想做的事情做出来吧。
-选">
+    <meta name="keywords" content="Hexo框架搭建本地博客步骤（一）, KITOHUANG">
+    <meta name="description" content="写在前面 本系列主要是讲怎么去安装 Node.js 、Hexo 、Git 、配置GitHub仓库、以及新建第一个 GitHub Pages页面。
+环境准备安装Node.js
+前往Node.js中文网站，根据Windows版本选择合适的安装包">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@
 
     
 
-    <title>我的第一个博客 | KITOHUANG</title>
+    <title>Hexo框架搭建本地博客步骤（一） | KITOHUANG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -313,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一个博客</h1>
+                    <h1 class="description center-align post-title">Hexo框架搭建本地博客步骤（一）</h1>
                 </div>
             </div>
         </div>
@@ -438,8 +439,16 @@
                                 <span class="chip bg-color">HEXO</span>
                             </a>
                         
-                            <a href="/tags/matery/">
-                                <span class="chip bg-color">matery</span>
+                            <a href="/tags/Node-js/">
+                                <span class="chip bg-color">Node.js</span>
+                            </a>
+                        
+                            <a href="/tags/npm/">
+                                <span class="chip bg-color">npm</span>
+                            </a>
+                        
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
                             </a>
                         
                     </div>
@@ -463,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-15
+                    2022-04-16
                 </div>
                 
 
@@ -487,20 +496,47 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="为什么要做自己的博客呢？"><a href="#为什么要做自己的博客呢？" class="headerlink" title="为什么要做自己的博客呢？"></a>为什么要做自己的博客呢？</h3><p>最根本的原因是林檎大佬说做一个个人博客网站非常有用，记录自己的学习心得、有用的代码块、时间长了也是个人简历说明的一种。正好本人对写作也充满兴趣，平时忙于工作又没时间去写点东西，趁着这个机会也把想做的事情做出来吧。</p>
-<h3 id="选用什么方式去部署个人博客？"><a href="#选用什么方式去部署个人博客？" class="headerlink" title="选用什么方式去部署个人博客？"></a>选用什么方式去部署个人博客？</h3><p>一开始考虑的是仿照优秀的博客，使用原生代码去写自己的博客网站，在搭建网站的过程中去学习前端的技术。不过在做了两天的准备后，发现一个完善的博客框架和好看的前端页面是我目前做不出来的，大受打击。最终选择使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>+<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>来部署个人网站。</p>
-<p>Hexo正如它所说的一样是如此的快速、高效、简洁。基于Node.js的优点，Hexo很快的将本地Markdown页面渲染成网页，另外有大量的插件可以使用，支持一键部署；当然，最重要的还是它的主题很多，使用起来很方便，只需要根据说明文档修改就能制作出来一具有个人特色的个人博客。</p>
-<h3 id="成果及感悟"><a href="#成果及感悟" class="headerlink" title="成果及感悟"></a>成果及感悟</h3><p>搭建个人博客的过程中遇到了各种奇奇怪怪的问题，把人折腾的够呛，不过在经历了一天的不懈努力，大体的框架终于搭建出来了！！！！撒花~！</p>
-<p>本博客使用到的资源环境如下：</p>
-<ul>
-<li>操作系统：Windows 10</li>
-<li>Node,js</li>
-<li>Hexo</li>
-<li>Git</li>
-<li>一个GitHub账号</li>
+                <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p> 本系列主要是讲怎么去安装 <em>Node.js</em> 、<em>Hexo</em> 、<em>Git</em> 、<em>配置GitHub仓库</em>、以及新建第一个 <em>GitHub Pages</em>页面。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><ul>
+<li><p>前往<a target="_blank" rel="noopener" href="http://nodejs.cn/">Node.js</a>中文网站，根据Windows版本选择合适的安装包，根据中文文档安装Node环境</p>
+</li>
+<li><p>打开一个新的PowerShell窗口,输入下面命令检查是否安装成功</p>
+<pre class="line-numbers language-none"><code class="language-none">npm -v
+node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>成功会显示当前安装环境的版本</p>
+</li>
 </ul>
-<p>成品展示~</p>
-<p><img src="/2022/04/15/wo-de-di-yi-ge-bo-ke/image-20220416212749962.png"></p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
+<li><p>进入官网下载软件并根据网络教程安装</p>
+</li>
+<li><p>打开一个新的PowerShell窗口,输入下面命令检查是否安装成功</p>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">git --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="修改npm源"><a href="#修改npm源" class="headerlink" title="修改npm源"></a>修改npm源</h3><ul>
+<li>由于官方 NPM 源下载 包的速度太慢，所以我们将 NPM 的源 替换成 淘宝源：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
+<li>Git-bash输入</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">npm install hexo-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">也可以参考官方文档</a>配置</li>
+</ul>
+<h3 id="配置GitHub仓库"><a href="#配置GitHub仓库" class="headerlink" title="配置GitHub仓库"></a>配置GitHub仓库</h3><ul>
+<li><p>注册一个GitHub账号，创建一个仓库用来托管代码</p>
+</li>
+<li><p><img src="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/image-20220416223415359.png"></p>
+</li>
+<li><p><img src="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/image-20220416223551516.png"></p>
+</li>
+</ul>
+<h2 id="环境搭建完成"><a href="#环境搭建完成" class="headerlink" title="环境搭建完成"></a>环境搭建完成</h2><p>到这里，除了GitHub的SSH Key 配置已经基本完成了，优秀的教程很多可以参考网上的教程，今天很晚了，明天继续写SSH Key 配置。</p>
 
                 
             </div>
@@ -517,7 +553,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">popo</a>
+                    <a href="/about" rel="external nofollow noreferrer">KITOHUANG</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -527,7 +563,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Huangxiaoruipo.github.io/2022/04/15/wo-de-di-yi-ge-bo-ke/">http://Huangxiaoruipo.github.io/2022/04/15/wo-de-di-yi-ge-bo-ke/</a>
+                    <a href="http://Huangxiaoruipo.github.io/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/">http://Huangxiaoruipo.github.io/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,7 +576,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">popo</a>
+                    <a href="/about" target="_blank">KITOHUANG</a>
                     !
                 </span>
             </div>
@@ -569,8 +605,16 @@
                                     <span class="chip bg-color">HEXO</span>
                                 </a>
                             
-                                <a href="/tags/matery/">
-                                    <span class="chip bg-color">matery</span>
+                                <a href="/tags/Node-js/">
+                                    <span class="chip bg-color">Node.js</span>
+                                </a>
+                            
+                                <a href="/tags/npm/">
+                                    <span class="chip bg-color">npm</span>
+                                </a>
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
                                 </a>
                             
                         </div>
@@ -622,13 +666,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/">
+                <a href="/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Hexo框架搭建本地博客步骤（一）">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Hexo框架搭建本地博客步骤（二）">
                         
-                        <span class="card-title">Hexo框架搭建本地博客步骤（一）</span>
+                        <span class="card-title">Hexo框架搭建本地博客步骤（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -639,7 +683,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
                         </span>
                         <span class="publish-author">
                             
@@ -683,13 +727,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/14/hello-world/">
+                <a href="/2022/04/15/wo-de-di-yi-ge-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="我的第一个博客">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">我的第一个博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -700,15 +744,31 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            KITOHUANG
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HEXO/" class="post-category">
+                                    HEXO
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HEXO/">
+                        <span class="chip bg-color">HEXO</span>
+                    </a>
+                    
+                    <a href="/tags/matery/">
+                        <span class="chip bg-color">matery</span>
+                    </a>
+                    
                 </div>
                 
             </div>

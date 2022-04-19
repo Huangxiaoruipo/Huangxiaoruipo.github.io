@@ -4,10 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo框架搭建本地博客步骤（-）, KITOHUANG">
-    <meta name="description" content="写在前面 本系列主要是讲怎么去安装 Node.js 、Hexo 、Git 、配置GitHub仓库、以及新建第一个 GitHub Pages页面。
-环境准备安装Node.js
-前往Node.js中文网站，根据Windows版本选择合适的安装包">
+    <meta name="keywords" content="Hexo框架搭建本地博客步骤（二）, KITOHUANG">
+    <meta name="description" content="关于Github的SSH-key获取接上一个文章内容，要再本地提交代码需要Github的权限，我们直接使用账户密码的话，并不安全，使用SSH-key可以免密登录，解决服务器-本地连接的问题。
+
+Git Bash 内输入
+
+git confi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +23,7 @@
 
     
 
-    <title>Hexo框架搭建本地博客步骤（-） | KITOHUANG</title>
+    <title>Hexo框架搭建本地博客步骤（二） | KITOHUANG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -314,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo框架搭建本地博客步骤（-）</h1>
+                    <h1 class="description center-align post-title">Hexo框架搭建本地博客步骤（二）</h1>
                 </div>
             </div>
         </div>
@@ -472,7 +474,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-16
+                    2022-04-19
                 </div>
                 
 
@@ -496,47 +498,178 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p> 本系列主要是讲怎么去安装 <em>Node.js</em> 、<em>Hexo</em> 、<em>Git</em> 、<em>配置GitHub仓库</em>、以及新建第一个 <em>GitHub Pages</em>页面。</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><ul>
-<li><p>前往<a target="_blank" rel="noopener" href="http://nodejs.cn/">Node.js</a>中文网站，根据Windows版本选择合适的安装包，根据中文文档安装Node环境</p>
-</li>
-<li><p>打开一个新的PowerShell窗口,输入下面命令检查是否安装成功</p>
-<pre class="line-numbers language-none"><code class="language-none">npm -v
-node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>成功会显示当前安装环境的版本</p>
-</li>
+                <h3 id="关于Github的SSH-key获取"><a href="#关于Github的SSH-key获取" class="headerlink" title="关于Github的SSH-key获取"></a>关于Github的SSH-key获取</h3><p>接上一个文章内容，要再本地提交代码需要Github的权限，我们直接使用账户密码的话，并不安全，使用SSH-key可以免密登录，解决服务器-本地连接的问题。</p>
+<ul>
+<li>Git Bash 内输入</li>
 </ul>
-<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
-<li><p>进入官网下载软件并根据网络教程安装</p>
-</li>
-<li><p>打开一个新的PowerShell窗口,输入下面命令检查是否安装成功</p>
-</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">git --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;usernmae&quot; &#x2F;&#x2F;你的用户名
+git config --global user.email  &quot;youremail&quot; &#x2F;&#x2F;你的注册邮箱<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h3 id="修改npm源"><a href="#修改npm源" class="headerlink" title="修改npm源"></a>修改npm源</h3><ul>
-<li>由于官方 NPM 源下载 包的速度太慢，所以我们将 NPM 的源 替换成 淘宝源：</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
-<li>Git-bash输入</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">npm install hexo-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">也可以参考官方文档</a>配置</li>
+<li>接着获取密钥</li>
 </ul>
-<h3 id="配置GitHub仓库"><a href="#配置GitHub仓库" class="headerlink" title="配置GitHub仓库"></a>配置GitHub仓库</h3><ul>
-<li><p>注册一个GitHub账号，创建一个仓库用来托管代码</p>
+<pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C github邮件地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><p>每次提示敲一次回车，GIit Bash出现一个点阵的方框信息就表示成功</p>
 </li>
-<li><p><img src="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou/image-20220416223415359.png" alt="image-20220416223415359"></p>
+<li><p>这个操作会在<code>C:\Users\LENOVO\.ssh</code>生成一个密钥文件，打开<code>id_rsa.pub</code>复制里面的内容</p>
 </li>
-<li><p><img src="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou/image-20220416223551516.png" alt="image-20220416223551516"></p>
+<li><p>在下图所示Github设置里面密钥，保存</p>
+</li>
+<li><img src="/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/image-20220419114225057.png" alt="image-20220419114225057" style="zoom:67%;">
+</li>
+<li><p>在Git Bash检测设置是否成功</p>
 </li>
 </ul>
-<h2 id="环境搭建完成"><a href="#环境搭建完成" class="headerlink" title="环境搭建完成"></a>环境搭建完成</h2><p>到这里，除了GitHub的SSH Key 配置已经基本完成了，优秀的教程很多可以参考网上的教程，今天很晚了，明天继续写SSH Key 配置。</p>
+<pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com &#x2F;&#x2F;输入这句命令，之后提示yes&#x2F;no的话输入 yes <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+<ul>
+<li>最后有下图提示说明成功</li>
+</ul>
+<p><img src="/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/image-20220419114606789.png" alt="成功了"></p>
+<h3 id="使用Hexo搭建博客"><a href="#使用Hexo搭建博客" class="headerlink" title="使用Hexo搭建博客"></a>使用Hexo搭建博客</h3><ul>
+<li>在你心仪的地方新建一个用来存放将来博客各种代码文件的文件夹</li>
+<li>进入文件夹，右键在文件夹下打开Git Bash</li>
+<li>初始化Hexo</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Hexo init MyBlog
+cd MyBlog
+npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li>执行完毕会生成下方文件夹目录（以下搬运自HEXO<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">官方文档</a>）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><ul>
+<li>网站的 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置</a> 信息，您可以在此配置大部分的参数。</li>
+</ul>
+<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><ul>
+<li>应用程序的信息。<a target="_blank" rel="noopener" href="https://ejs.co/">EJS</a>, <a target="_blank" rel="noopener" href="http://learnboost.github.io/stylus/">Stylus</a> 和 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a> renderer 已默认安装，您可以自由移除。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package.json&#123;
+  &quot;name&quot;: &quot;hexo-site&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;private&quot;: true,
+  &quot;hexo&quot;: &#123;
+    &quot;version&quot;: &quot;&quot;
+  &#125;,
+  &quot;dependencies&quot;: &#123;
+    &quot;hexo&quot;: &quot;^3.8.0&quot;,
+    &quot;hexo-generator-archive&quot;: &quot;^0.1.5&quot;,
+    &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,
+    &quot;hexo-generator-index&quot;: &quot;^0.2.1&quot;,
+    &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,
+    &quot;hexo-renderer-ejs&quot;: &quot;^0.3.1&quot;,
+    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.3&quot;,
+    &quot;hexo-renderer-marked&quot;: &quot;^0.3.2&quot;,
+    &quot;hexo-server&quot;: &quot;^0.3.3&quot;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing">模版</a> 文件夹。当您新建文章时，<code>Hexo </code>会根据 <code>scaffold</code> 来建立文件。</p>
+</li>
+<li><p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改<code>scaffold/post.md</code>中的<code>Front-matter</code>内容，那么每次新建一篇文章时都会包含这个修改。</p>
+</li>
+</ul>
+<h4 id="source"><a href="#source" class="headerlink" title="source"></a>source</h4><ul>
+<li>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 &#x2F; 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</li>
+</ul>
+<h4 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/themes">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</li>
+</ul>
+<h3 id="让我们来生成第一个Hexo博客站点"><a href="#让我们来生成第一个Hexo博客站点" class="headerlink" title="让我们来生成第一个Hexo博客站点"></a>让我们来生成第一个Hexo博客站点</h3><pre class="line-numbers language-none"><code class="language-none">hexo g &#x2F;&#x2F;hexo generate简写，根据模板，拉取资源文件渲染静态网页
+hexo s &#x2F;&#x2F;hexo server简写，在本地运行服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li>在浏览器，本地访问 <a target="_blank" rel="noopener" href="http://127.0.0.1:4000/">http://127.0.0.1:4000</a> 端口，如果被占用中断运行服务厚更换到5000端口</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">hexo s -p 5000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h3 id="部署到Github个人主页"><a href="#部署到Github个人主页" class="headerlink" title="部署到Github个人主页"></a>部署到Github个人主页</h3><ul>
+<li>安装Hexo一键部署工具包</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<ul>
+<li>根目录下的<code>_config.yml</code>文件deploy里添加以下设置</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">deploy:
+  type: git
+  repo: https:&#x2F;&#x2F;github.com&#x2F;你的用户名&#x2F;你的用户名.github.io &#x2F;&#x2F;即注册仓库的名称
+  branch: main &#x2F;&#x2F;新版本特性使用Main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li>一切就绪，Git Bash输入以下命令</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">hexo clean
+hexo g
+hexo d &#x2F;&#x2F;将代码托管到Github仓库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li>有可能会需要输入 name password，分别输入注册邮箱和密码即可。</li>
+<li>成功后在浏览器输入网址</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;仓库名.github.io&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<ul>
+<li>如果部署失败可以参考下面解决方法，这是我第一次部署的时候踩到的各种坑。</li>
+</ul>
+<h3 id="关于部署不上的解决方法"><a href="#关于部署不上的解决方法" class="headerlink" title="关于部署不上的解决方法"></a>关于部署不上的解决方法</h3><ul>
+<li>其一，<code>Github</code> 的服务器部署在海外，连接比较慢，多测试几次</li>
+<li>其二，恰好当时网址被墙了，设置以下host再试</li>
+<li>其三，还是登录不上的话再去设置一个<code>Personal access tokens</code>来作为登录密钥</li>
+<li>其四，启用通过 HTTPS 的 SSH 连接，在<code>~/.ssh/config</code>编辑文件，设置如下</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Host github.com
+Hostname ssh.github.com
+Port 443
+User git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li>再次连接github.com测试是否连接上</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">$ ssh -T git@github.com
+&gt; Hi username! You&#39;ve successfully authenticated, but GitHub does not
+&gt; provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="网站托管成功"><a href="#网站托管成功" class="headerlink" title="网站托管成功"></a>网站托管成功</h3><ul>
+<li>到现在我们的博客就部署完成了，但是自带界面是怎么能满足我们对美的追求呢，下篇会介绍以下怎么使用各位大佬现成的主题对个人博客美化、修改出一个有个人特色的一个网站。</li>
+</ul>
 
                 
             </div>
@@ -563,7 +696,7 @@ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Huangxiaoruipo.github.io/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou/">http://Huangxiaoruipo.github.io/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou/</a>
+                    <a href="http://Huangxiaoruipo.github.io/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/">http://Huangxiaoruipo.github.io/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -667,13 +800,13 @@ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou/">
+                <a href="/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Hexo框架搭建本地博客步骤（-）">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Hexo框架搭建本地博客步骤（二）">
                         
-                        <span class="card-title">Hexo框架搭建本地博客步骤（-）</span>
+                        <span class="card-title">Hexo框架搭建本地博客步骤（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -684,7 +817,7 @@ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
                             </span>
                         <span class="publish-author">
                             
@@ -729,13 +862,13 @@ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/15/wo-de-di-yi-ge-bo-ke/">
+                <a href="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="我的第一个博客">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Hexo框架搭建本地博客步骤（一）">
                         
-                        <span class="card-title">我的第一个博客</span>
+                        <span class="card-title">Hexo框架搭建本地博客步骤（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -746,7 +879,7 @@ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-16
                             </span>
                         <span class="publish-author">
                             
@@ -767,8 +900,16 @@ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                         <span class="chip bg-color">HEXO</span>
                     </a>
                     
-                    <a href="/tags/matery/">
-                        <span class="chip bg-color">matery</span>
+                    <a href="/tags/Node-js/">
+                        <span class="chip bg-color">Node.js</span>
+                    </a>
+                    
+                    <a href="/tags/npm/">
+                        <span class="chip bg-color">npm</span>
+                    </a>
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>
