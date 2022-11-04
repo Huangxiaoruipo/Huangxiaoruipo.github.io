@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 350px;
+    border-radius: 20px;
+    background-color: #4471a3;
+    box-shadow: 15px 15px 10px rgb(33, 45, 58,0.3);
+    overflow: hidden;
+    position: relative;
+
+}
+
+.container form{
+
+    width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    
+}
+
+.container form .tex {
+    width: 250px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+}
+
+.container form .tex::placeholder {
+    color: rgb(236, 231, 231);
+    font-size: 16px;
+    letter-spacing: 2px;
+
+}
+
+.container form .sub{
+
+    width: 250px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    background:none;
+    color: #fff; 
+    cursor: pointer;
+    margin-top: 15px;
+
+}
+
+.container h1{
+    color: antiquewhite;
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+    font-weight: 100;
+    text-shadow: 5px 5px 5px rgb(33, 45, 58,0.3);
+    z-index: 1;
+}
+
+/* css动画
+    设置鼠标进入的样式 */
+
+.container .in{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: red;
+    transform: translate(-50%,-50%);
+    animation: in 0.5s ease-out forwards;
+}
+
+.container .out{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50%;
+    background-color: red;
+    transform: translate(-50%,-50%);
+    animation: out 0.5s ease-out forwards;
+}
+
+/* 设置鼠标进入时候的动画 */
+@keyframes in {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 1200px;
+        height: 1200px;
+    }
+
+}
+@keyframes out {
+    0%{
+        width: 1200px;
+        height: 1200px;
+
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
+
+}
+
+        
+    </style>
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Login</h1>
+
+        <form action="">
+            <input type="text" class="tex" placeholder="Uer">
+            <input type="password" class="tex" placeholder="password">
+            <input type="submit" class="sub" value="登录">
+        </form>
+    </div>
+    <script>
+        // 定义一个con绑定 container
+        // 不需要jQuery支持也能访问DOM元素
+        const con = document.querySelector(".container");
+
+        // 定义两个门 开、关
+
+        let isIn = true;
+        let isOut = false;
+
+        var span;
+
+        // 添加监听器
+
+        // 鼠标进入事件
+
+        con.addEventListener('mouseenter',(e)=>{
+            if(isIn){
+                // e.clientX e.clientX 比较简单表示鼠标在滑动的时候在浏览器可视窗口的坐标
+                // target.offsetLeft target.offsetTop表示dom元素的定位坐标
+                // 相减获得鼠标进入位置的监听信息
+                let InX = e.clientX-e.target.offsetLeft;
+                let InY = e.clientY-e.target.offsetTop;
+
+                // 创建一个sapn元素,并给他相对应的出生坐标
+
+                let el = document.createElement("span");
+                el.style.left = InX+"px";
+                el.style.top = InY+"px";
+                con.appendChild(el);
+
+                // span赋值成一个style
+
+                $('.container span').removeClass('out'); //移除出去动画
+                $('.container span').addClass('in'); //添加进入动画
+                span = document.querySelector('.container span');
+                
+                isIn = false;
+                isOut = true;
+
+
+
+            }
+
+        })
+        con.addEventListener('mouseleave',(e)=>{
+            if(isOut){
+
+                let outX = e.clientX-e.target.offsetLeft;
+                let outY = e.clientY-e.target.offsetTop;
+
+                $('.container span').removeClass('in');
+                $('.container span').addClass('out');
+
+                $('.out').css('left',outX+'px');
+                $('.out').css('top',outY+'px');
+
+                isOut = false;
+
+                // 动画结束再移除元素
+
+                setTimeout(()=>{
+                    con.removeChild(span);
+                    isIn = true;
+                },500)
+
+            }
+
+        })
+
+
+
+    </script>
+</body>
+</html>

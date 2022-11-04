@@ -1,0 +1,1394 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python pandas note, KITOHUANG">
+    <meta name="description" content="pandas基本功能使用的是tekla13.0版本套料工具生成工程时，形成的report数据，名字是myflie.csv
+读取数据pandas采用read_csv方法读取文件时会出现编码错误，在代码首部加上说明，读取时使用gbk的编码方式，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>Python pandas note | KITOHUANG</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="KITOHUANG" type="application/atom+xml">
+</head>
+
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">KITOHUANG</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">KITOHUANG</div>
+        <div class="logo-desc">
+            
+            去年今日此门中，人面桃花相映红。人面不知何处去，桃花依旧笑春风。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Huangxiaoruipo/Huangxiaoruipo" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Huangxiaoruipo/Huangxiaoruipo" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python pandas note</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/pandas/">
+                                <span class="chip bg-color">pandas</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-30
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="pandas基本功能"><a href="#pandas基本功能" class="headerlink" title="pandas基本功能"></a>pandas基本功能</h3><p>使用的是tekla13.0版本套料工具生成工程时，形成的<code>report</code>数据，名字是<code>myflie.csv</code></p>
+<h4 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h4><p>pandas采用read_csv方法读取文件时会出现编码错误，在代码首部加上说明，读取时使用<code>gbk</code>的编码方式，全部代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none"># -- coding : utf-8 --
+# coding: utf-8
+
+import pandas as pd
+import openpyxl
+import numpy as np
+import time
+import xlrd
+
+data &#x3D; pd.read_csv(&#39;myfile.csv&#39;, header&#x3D;None, sep&#x3D;&#39;,&#39;, encoding&#x3D;&#39;gbk&#39;)
+print(data)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/04/30/python-pandas-note/image-20220501093337810.png" alt="读取结果"></p>
+<p>可以看到一共在<code>myfile.csv</code>内读取到了7行13列的数据，第一行是标题行，第三列到第十列被压缩起来了，我们无法看到数据的全貌，提供方法去展示数据：</p>
+<p>在print之前添加一个<code>pd.set_option(&#39;display.max_columns&#39;, None)</code>的属性，顺便的把<code>header</code>设置为0，把第一行做为列索引（<code>index_col=0</code>可以设置列索引，<code>usecols=[1,2,3]</code>用来选定对应的列数）。</p>
+<pre class="line-numbers language-none"><code class="language-none">import pandas as pd
+import openpyxl
+import numpy as np
+import time
+import xlrd
+
+data &#x3D; pd.read_csv(&#39;myfile.csv&#39;, header&#x3D;0, sep&#x3D;&#39;,&#39;, encoding&#x3D;&#39;gbk&#39;)
+pd.set_option(&#39;display.max_columns&#39;, None)
+print(data)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/04/30/python-pandas-note/image-20220501100819754.png" alt="全部数据"></p>
+<h4 id="空值处理"><a href="#空值处理" class="headerlink" title="空值处理"></a>空值处理</h4><p>在查看所有的数据以后，我们发现原始的数据的第二列（在<code>Dataframe</code>中是索引<code>loc[0]</code>），这时候我们对数据行进行一些处理，把<code>NaN</code>行先去掉，就可以在读取的时候直接跳过这行，<code>Drawing No</code>也是一个空数据，在后续的处理中去掉。两种种方法去处理NaN值：</p>
+<p><em><strong>读取的时候直接跳过</strong></em></p>
+<pre class="line-numbers language-none"><code class="language-none">import pandas as pd
+data &#x3D; pd.read_csv(&#39;myfile.csv&#39;, header&#x3D;0, sep&#x3D;&#39;,&#39;, skiprows&#x3D;[1], usecols&#x3D;[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11],
+                   encoding&#x3D;&#39;gbk&#39;)
+pd.set_option(&#39;display.max_columns&#39;, None)  # 显示全部列
+pd.set_option(&#39;display.unicode.ambiguous_as_wide&#39;, True)  # 列名称数据对齐
+pd.set_option(&#39;display.unicode.east_asian_width&#39;, True)  # 列名称数据对齐
+print(data.head())  # 打印前5行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/04/30/python-pandas-note/image-20220501111255451.png" alt="直接在读取的时候去掉空值"></p>
+<p><em><strong>读取完毕再处理</strong></em></p>
+<p>我们很多时候数据缺失并不是整行或者整列的，我们读取之后再来处理</p>
+<pre class="line-numbers language-none"><code class="language-none">import pandas as pd
+import openpyxl
+import numpy as np
+import time
+import xlrd
+
+data &#x3D; pd.read_csv(&#39;myfile.csv&#39;, header&#x3D;0, sep&#x3D;&#39;,&#39;,
+                   encoding&#x3D;&#39;gbk&#39;)
+pd.set_option(&#39;display.max_columns&#39;, None)  # 显示全部列
+pd.set_option(&#39;display.unicode.ambiguous_as_wide&#39;, True)  # 列名称数据对齐
+pd.set_option(&#39;display.unicode.east_asian_width&#39;, True)  # 列名称数据对齐
+# print(data.head())  # 打印前5行
+print(data.columns)  # 查看列名
+columns &#x3D; data.columns  # 赋值给columns
+print(type(columns))  # 查看类型&lt;class &#39;pandas.core.indexes.base.Index&#39;&gt;
+data.replace(&#39;$NULL$&#39;, np.nan, inplace&#x3D;True)  # 替换字符串为nan<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># 对于列的缺失，我们提供两个思路处理
+# for col in columns:
+#     # print(data[col].count())
+#     if data[col].count() &#x3D;&#x3D; 0:  # 判断是否全空
+#         data.drop(labels&#x3D;col, axis&#x3D;1, inplace&#x3D;True)
+-----------------------------
+第二种
+col &#x3D; data.count() &#x3D;&#x3D; 0
+print(col) #返回的是每列的布尔值
+len &#x3D; len(col)
+print(len)
+for i in range(len):
+    if col[i]:
+        data.drop(labels&#x3D;col.index[i],axis&#x3D;1,inplace&#x3D;True)
+print(data)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/04/30/python-pandas-note/image-20220501121112252.png" alt="将Drawing No这个无效列去除"></p>
+<p>我们再用<code>data.isnull().sum()</code>去对数据表空值进行统计，方便后续处理</p>
+<p><img src="/2022/04/30/python-pandas-note/image-20220501121328869.png" alt="统计空值"></p>
+<p>用<code>dropna</code>方法去除空行，指定 <code>how=&#39;all&#39;</code></p>
+<pre class="line-numbers language-none"><code class="language-none">data1 &#x3D; data.dropna(axis&#x3D;0, how&#x3D;&#39;all&#39;, thresh&#x3D;None, subset&#x3D;None, inplace&#x3D;False)#只有全部为空才回被删除
+print(data1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>axis：默认为 0，表示逢空值剔除整行，如果设置参数 axis＝1 表示逢空值去掉整列。</li>
+<li>how：默认为 ‘any’ 如果一行（或一列）里任何一个数据有出现 NA 就去掉整行，如果设置 how&#x3D;’all’ 一行（或列）都是 NA 才去掉这整行。</li>
+<li>thresh：设置需要多少非空值的数据才可以保留下来的。</li>
+<li>subset：设置想要检查的列。如果是多个列，可以使用列名的 list 作为参数。</li>
+<li>inplace：如果设置 True，将计算得到的值直接覆盖之前的值并返回 None，修改的是源数据。</li>
+</ul>
+<p><img src="/2022/04/30/python-pandas-note/image-20220501122356900.png" alt="去除全部是空的行"></p>
+<p>假如这样行列处理完毕以后，我们数据还是有某些个值缺失，数据量大的时候可以这么做</p>
+<pre class="line-numbers language-none"><code class="language-none">data_isnull &#x3D; data[data.isnull().values &#x3D;&#x3D; True] #查找所有空值<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/04/30/python-pandas-note/image-20220502084330664.png" alt="缺失数据"></p>
+<p>很轻松就找到了整个表有缺失的值</p>
+<p>另外补充查看各个列缺失情况的方法如下</p>
+<pre class="line-numbers language-none"><code class="language-none">data.isnull().sum() #8、对缺失值进行统计，统计出每一个字段有多少缺失值。
+# 光看缺失值数量 却不对比总样本数是不对的。
+data.isnull().mean() # 可以查看各列缺失值的比例
+
+data.drop(columns&#x3D;&#39;xx&#39;,inplace&#x3D;True) #删除缺失值大于某个比例的列
+
+data&#x3D;data.loc[:,df.isnull().mean()&lt;0.5] #剔除缺失值比例大于50%的列
+
+data.dropna() #删除所有缺失值所在的行和列，像炸弹一样横纵两列都消失
+其他的:
+data.fillna() # 填充缺失值。
+data[&#39;age&#39;].fillna(data[&#39;age&#39;].mean())  # 用均值填充
+data[&#39;age&#39;].fillna(method&#x3D;&#39;bfill&#39;)  # 用此空后面的值填充
+data[&#39;age&#39;].fillna(method&#x3D;&#39;ffill&#39;)  # 用此空前面的值填充，有顺序的序列可以此二法填充<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>查找na所在的行和列</p>
+<pre class="line-numbers language-none"><code class="language-none">position &#x3D; data.isnull().stack()[lambda x:x].index.tolist()
+print(position) #[(5, &#39;Part Name&#39;)]
+-----------
+小例子
+-----------
+#!&#x2F;usr&#x2F;bin&#x2F;evn python
+# -*-coding:utf8 -*-
+import pandas as pd
+data &#x3D; [[None, None, 90, 80],[57, 43, 89, 65],[78, 50, 67, 78],[None, 78, 90, 73],[67, 45, 78, 76],[77, 88, None, 45],[52, 110, 120, 99],[131, 13, 32, 12]]
+index &#x3D; [&#39;语文&#39;, &#39;英语&#39;, &#39;数学&#39;, &#39;政治&#39;, &#39;物理&#39;, &#39;化学&#39;, &#39;生物&#39;, &#39;地理&#39;]
+column &#x3D; [&#39;张三&#39;, &#39;李四&#39;, &#39;王五&#39;, &#39;周六&#39;]
+data &#x3D; pd.DataFrame(data,index&#x3D;index,columns&#x3D;column)
+print(data)
+print(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;\n&quot;)
+for columname in data.columns:
+    if data[columname].count() !&#x3D; len(data):
+         loc &#x3D; data[columname][data[columname].isnull().values&#x3D;&#x3D;True].index.tolist()
+         print(&#39;列名：&quot;&#123;&#125;&quot;, 第&#123;&#125;行位置有缺失值&#39;.format(columname,loc))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><pre class="line-numbers language-none"><code class="language-none"># 索引
+# 直接使用索引行列
+print(data[&#39;Part Name&#39;][5])
+# 使用loc
+print(data.loc[5,&#39;Part Name&#39;])
+print(data.loc[data[&#39;Part Name&#39;].isnull()])   #等价于print(data[data[&#39;Part Name&#39;].isnull()])
+print(&#39;-&#39; * 20)
+print(data[data[&#39;Part Name&#39;].isnull()])
+# 使用iloc,返回的是个dataframe
+print(data.iloc[4:5,1:2])
+
+*****************
+nan
+nan
+   S&#x2F;N Part Name Material Grade  Thickness    Mark No  Weight  Surface Area  \
+5  5.0       NaN          Q355B       18.0  a-2P-1239   141.3         2.185   
+
+                   Ref. No  Qty Nesting Task  Nested Qty  
+5  （B105-0042）施工总承包  2.0     myfile02         0.0  
+--------------------
+   S&#x2F;N Part Name Material Grade  Thickness    Mark No  Weight  Surface Area  \
+5  5.0       NaN          Q355B       18.0  a-2P-1239   141.3         2.185   
+
+                   Ref. No  Qty Nesting Task  Nested Qty  
+5  （B105-0042）施工总承包  2.0     myfile02         0.0  
+  Part Name
+5       NaN
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="修改单元格的值"><a href="#修改单元格的值" class="headerlink" title="修改单元格的值"></a>修改单元格的值</h4><pre class="line-numbers language-none"><code class="language-none">data.loc[5,&#39;Part Name&#39;] &#x3D; data.loc[5,&#39;Mark No&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/04/30/python-pandas-note/image-20220502112841786.png" alt="修改单元格的值"></p>
+<h5 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h5><h6 id="行间运算"><a href="#行间运算" class="headerlink" title="行间运算"></a>行间运算</h6><p>在实例表中行间加法无意义，简单示例</p>
+<p>加法</p>
+<p><code>data[columns1]+ data[columns2]</code>列之间相加<strong>columns</strong>是索引</p>
+<p>对于行间所有数据求和，除了上述方法一个一个加外还可以</p>
+<p><code>data.eval(&#39;合计=columns1+columns2+columns3&#39;)</code></p>
+<p>或者</p>
+<p><code>data.sum(axis=1)</code>指定轴是列</p>
+<p>将求和数据储存到<code>dataframe</code>中</p>
+<p><code>data[合计] = data.sum(axis=1)</code></p>
+<p>四则运算同理，减法，乘法，除法不再一一列出。</p>
+<h6 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h6><p><code>data[columns1]&gt;&lt;data[columns2]</code>返回的是一组布尔值</p>
+<p>也可以通过<code>query()</code>函数查看结果</p>
+<p><code>data.query([columns1&gt;[columns2])</code></p>
+<p>同等于<code>data[data[columns1]&gt;&lt;data[columns2]]</code></p>
+<p><code>data.query([columns1==&#39;A&#39;)</code></p>
+<p>同等于<code>data[data[columns1]==[A]]</code></p>
+<p><strong>这两个方法都可以查看到比较运算的表结果</strong></p>
+<h6 id="汇总运算"><a href="#汇总运算" class="headerlink" title="汇总运算"></a>汇总运算</h6><p>即对行之间的运算函数</p>
+<p>count() 计数函数，会统计数据中非空个数</p>
+<p><code>data.count()</code></p>
+<p>类似len()和shape但是更加详细</p>
+<p>省缺参数默认纵向统计，指定<code>data.count(axis=1)</code>可以横向统计列之间的空值</p>
+<p>sum()</p>
+<p>前面也展示了sum()的用法</p>
+<p>默认省缺参数是对纵向求和，data.sum(axis&#x3D;1)是对横向求和</p>
+<p>mean()</p>
+<p>平均数函数，类似sum()</p>
+<p>可以指定内部参与运算的列和行，例如</p>
+<p><code>data.mean(columns1，columns1)</code></p>
+<p>除以上计算外，Pandas还支持最大值max()，最小值min()，另外进阶函数有：中位数函数median()、求众数函数mode()、方差函数var()、标准差函数std()、分位数函数quantile()和相关性函数corr()。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>花了三天时间把之前的笔记整理出来，很多有意思的东西也重新复习了一下，类似高阶数组的广播，高阶数组的轴向表示方法都重新复习了一遍。</p>
+<p>接下来就是将PIL和matplotlib整理出来，先贴上一代码防止找不到</p>
+<pre class="line-numbers language-none"><code class="language-none">#图像手绘模拟
+from PIL import Image
+import numpy as np
+a &#x3D; np.array(Image.open(r&quot;C:\Users\LENOVO\Desktop\21c55b005c746518e5e9f3522d9416b5.jpg&quot;).convert(&#39;L&#39;)).astype(&#39;float&#39;)
+depth &#x3D; 10
+grad &#x3D; np.gradient(a)   #获取图像灰度梯度
+grad_x,grad_y &#x3D; grad    #获取横纵梯度值
+grad_x&#x3D;grad_x*depth&#x2F;100.    #横向归一整理
+grad_y&#x3D;grad_y*depth&#x2F;100.    #纵向归一整理
+A &#x3D; np.sqrt(grad_x**2+grad_y**2+1.)
+uni_x &#x3D; grad_x&#x2F;A
+uni_y &#x3D; grad_y&#x2F;A
+uni_z &#x3D; 1.&#x2F;A    #得到归一单位法向量值
+
+vec_el &#x3D; np.pi&#x2F;2.2  #建立光源三维坐标体系，对应横纵弧长
+vec_az &#x3D; np.pi&#x2F;4.
+dx &#x3D; np.cos(vec_el)*np.cos(vec_az)  #获取光源具体位置，计算影响因子
+dy &#x3D; np.cos(vec_el)*np.sin(vec_az)
+dz &#x3D; np.sin(vec_el)
+
+b &#x3D; 225*(dx*uni_x+dy*uni_y+dz*uni_z)    #归一求出具体的光源影响量
+
+b&#x3D;b.clip(0,225)     #避免数据溢出
+
+im &#x3D; Image.fromarray(b.astype(&#39;uint8&#39;))     #用framarry将得到的灰度转换为对应数组
+im.save(r&quot;C:\Users\LENOVO\Desktop\手绘.jpg&quot;)      #保存图形<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#import  matplotlib.pyplot as plt    #重新定义matplotlib的函数为plt
+import numpy as np
+&quot;&quot;&quot;
+plt.subplot2grid((3,3),(0,0),colspan&#x3D;3)
+plt.plot([0,2,4,6,8],[3,1,4,5,2])   #建立一个x坐标是02468Y，y坐标是31452的元素 绘制折线图
+plt.ylabel(&#39;纵坐标&#39;,fontproperties&#x3D;&#39;SimHei&#39;,fontsize&#x3D;25,color&#x3D;&#39;green&#39;)     #y轴标签为Grade
+plt.xlabel(&#39;横坐标&#39;,fontproperties&#x3D;&#39;SimHei&#39;,fontsize&#x3D;25,color&#x3D;&#39;green&#39;)
+plt.title(&#39;示例&#39;,fontproperties&#x3D;&#39;SimHei&#39;,fontsize&#x3D;25)
+plt.annotate(&#39;this is anne&#39;,xy&#x3D;(6,4.5),xytext&#x3D;(4,2),arrowprops&#x3D;dict(facecolor&#x3D;&#39;black&#39;,shrink&#x3D;0.1,width&#x3D;1)) 
+plt.axis([-1,10,0,6])   #x轴从-1到10，Y轴从0到6，另外subplot可以分割绘图区域
+plt.subplot2grid((3,3),(1,0),colspan&#x3D;2) #分割绘图区域
+labels &#x3D; &#39;Frogs&#39;,&#39;Hogs&#39;,&#39;Dogs&#39;,&#39;Logs&#39;   #柱状图
+sizes &#x3D; [15,30,45,10]
+explode &#x3D; (0,0.1,0,0)
+plt.pie(sizes,explode&#x3D;explode,labels&#x3D;labels,autopct&#x3D;&#39;%1.1f%%&#39;,shadow&#x3D;False,startangle&#x3D;90)
+plt.axis(&#39;equal&#39;)
+plt.subplot2grid((3,3),(1,2),rowspan&#x3D;2)
+np.random.seed(0)
+mu,sigma &#x3D; 100,20   #均值和标准差
+a &#x3D; np.random.normal(mu,sigma,size&#x3D;100)
+plt.hist(a,40,density&#x3D;1,histtype&#x3D;&#39;stepfilled&#39;,facecolor&#x3D;&#39;blue&#39;,alpha&#x3D;0.75)
+plt.title(&#39;Histogram&#39;)
+plt.subplot2grid((3,3),(2,0))&quot;&quot;&quot;
+N&#x3D;20    #饼图
+theta&#x3D;np.linspace(0.0,2*np.pi,N,endpoint&#x3D;False)
+radii &#x3D; 10*np.random.rand(N)
+width&#x3D;np.pi&#x2F;4*np.random.rand(N)
+ax &#x3D; plt.subplot(111,projection&#x3D;&#39;polar&#39;)
+bars &#x3D; ax.bar(theta,radii,width&#x3D;width,bottom&#x3D;0.0)
+for r,bar in zip(radii,bars):
+    bar.set_facecolor(plt.cm.viridis(r&#x2F;10.))
+    bar.set_alpha(0.5)
+#plt.subplot2grid((3,3),(2,1))
+plt.grid(True)
+plt.show()  #输出图形<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">KITOHUANG</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Huangxiaoruipo.github.io/2022/04/30/python-pandas-note/">http://Huangxiaoruipo.github.io/2022/04/30/python-pandas-note/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">KITOHUANG</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/pandas/">
+                                    <span class="chip bg-color">pandas</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/05/03/bian-li-wen-jian-jia-pi-pei-wen-jian-da-kai-qie-pian-xiu-gai-wen-jian-an-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="遍历文件夹、匹配文件、打开切片修改文件案例">
+                        
+                        <span class="card-title">遍历文件夹、匹配文件、打开切片修改文件案例</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">OS模块</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%81%8D%E5%8E%86%E6%96%87%E4%BB%B6/">
+                        <span class="chip bg-color">遍历文件</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8C%87%E5%AE%9A%E5%90%8E%E7%BC%80/">
+                        <span class="chip bg-color">指定后缀</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8C%81%E4%B9%85%E5%8C%96%E5%82%A8%E5%AD%98%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">持久化储存数据</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%97%E8%A1%A8%E5%88%87%E7%89%87/">
+                        <span class="chip bg-color">列表切片</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/30/accordion-te-xiao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="accordion特效">
+                        
+                        <span class="card-title">accordion特效</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CSS/" class="post-category">
+                                    CSS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                    <a href="/tags/CSS3/">
+                        <span class="chip bg-color">CSS3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="/about" target="_blank">KITOHUANG</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Huangxiaoruipo/Huangxiaoruipo.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1982059545@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1982059545" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1982059545" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
