@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://huangxiaoruipo.github.io/2022/11/05/man-chang-de-shi-lian-hou/</loc>
+    <loc>http://huangxiaoruipo.github.io/2022/11/05/man-chang-de-shi-lian-yi-hou-xiang-shuo-de-hua/</loc>
     
     <lastmod>2022-11-05</lastmod>
     
@@ -248,14 +248,14 @@
   </url>
   
   <url>
-    <loc>http://huangxiaoruipo.github.io/tags/MySQL/</loc>
+    <loc>http://huangxiaoruipo.github.io/tags/quicksort/</loc>
     <lastmod>2022-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://huangxiaoruipo.github.io/tags/quicksort/</loc>
+    <loc>http://huangxiaoruipo.github.io/tags/MySQL/</loc>
     <lastmod>2022-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -277,6 +277,27 @@
   
   <url>
     <loc>http://huangxiaoruipo.github.io/tags/CSS3/</loc>
+    <lastmod>2022-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/tags/matery/</loc>
+    <lastmod>2022-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE/</loc>
+    <lastmod>2022-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/tags/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2022-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -317,20 +338,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>http://huangxiaoruipo.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE/</loc>
-    <lastmod>2022-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/tags/matery/</loc>
-    <lastmod>2022-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -356,6 +363,13 @@
   
   <url>
     <loc>http://huangxiaoruipo.github.io/categories/CSS/</loc>
+    <lastmod>2022-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/categories/%E9%9A%8F%E6%83%B3%E5%BD%95/</loc>
     <lastmod>2022-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
