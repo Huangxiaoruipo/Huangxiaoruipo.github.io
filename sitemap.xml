@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://huangxiaoruipo.github.io/contact/index.html</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/05/03/bian-li-wen-jian-jia-pi-pei-wen-jian-da-kai-qie-pian-xiu-gai-wen-jian-an-li/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://huangxiaoruipo.github.io/2022/11/05/man-chang-de-shi-lian-yi-hou-xiang-shuo-de-hua/</loc>
     
     <lastmod>2022-11-05</lastmod>
@@ -13,88 +31,7 @@
   <url>
     <loc>http://huangxiaoruipo.github.io/2022/05/07/zheng-ze-biao-da-shi/</loc>
     
-    <lastmod>2022-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/05/03/bian-li-wen-jian-jia-pi-pei-wen-jian-da-kai-qie-pian-xiu-gai-wen-jian-an-li/</loc>
-    
-    <lastmod>2022-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/30/python-pandas-note/</loc>
-    
-    <lastmod>2022-05-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/30/accordion-te-xiao/</loc>
-    
-    <lastmod>2022-04-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/28/python-numpy-ji-chu-yi/</loc>
-    
-    <lastmod>2022-04-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/25/excel-shu-ju-biao-han-shu-ji-ben-cao-zuo/</loc>
-    
-    <lastmod>2022-04-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/24/python-kuai-pai-shi-xian-yuan-li-ji-dai-ma/</loc>
-    
-    <lastmod>2022-04-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/21/python-lian-jie-mysql-bing-zhi-xing-cao-zuo/</loc>
-    
-    <lastmod>2022-04-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/</loc>
-    
-    <lastmod>2022-04-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/</loc>
-    
-    <lastmod>2022-04-19</lastmod>
+    <lastmod>2022-11-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +40,88 @@
   <url>
     <loc>http://huangxiaoruipo.github.io/2022/04/15/wo-de-di-yi-ge-bo-ke/</loc>
     
-    <lastmod>2022-04-16</lastmod>
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/11/04/hello-world/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/30/accordion-te-xiao/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/21/python-lian-jie-mysql-bing-zhi-xing-cao-zuo/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/24/python-kuai-pai-shi-xian-yuan-li-ji-dai-ma/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/30/python-pandas-note/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/28/python-numpy-ji-chu-yi/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/19/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-er/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/2022/04/25/excel-shu-ju-biao-han-shu-ji-ben-cao-zuo/</loc>
+    
+    <lastmod>2022-11-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -138,15 +156,6 @@
   
   <url>
     <loc>http://huangxiaoruipo.github.io/categories/index.html</loc>
-    
-    <lastmod>2022-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://huangxiaoruipo.github.io/2022/11/04/hello-world/</loc>
     
     <lastmod>2022-04-14</lastmod>
     
@@ -241,13 +250,6 @@
   </url>
   
   <url>
-    <loc>http://huangxiaoruipo.github.io/tags/pandas/</loc>
-    <lastmod>2022-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://huangxiaoruipo.github.io/tags/quicksort/</loc>
     <lastmod>2022-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -277,6 +279,13 @@
   
   <url>
     <loc>http://huangxiaoruipo.github.io/tags/CSS3/</loc>
+    <lastmod>2022-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://huangxiaoruipo.github.io/tags/pandas/</loc>
     <lastmod>2022-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
