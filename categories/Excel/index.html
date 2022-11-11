@@ -330,40 +330,9 @@
                 
                 <!-- 一言 -->
                 
-                    <span id="hitokoto" style="font-size: 20px;"></span>
-                    <!-- 打字机 -->
-                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-                    <script>
-                        var hitokotoContent = ''
-                        function typed(hitokotoContent) {
-                            var typed = new Typed("#hitokoto", {
-                                strings: [
-                                    hitokotoContent
-                                ],
-                                startDelay: 300,
-                                typeSpeed: 100,
-                                loop: false,
-                                backSpeed: 50,
-                                showCursor: true
-                            });
-                        }
-                        async function hitokoto() {
-                            hitokotoContent = await fetch('https://v1.hitokoto.cn')
-                                .then(function (res) {
-                                    return res.json();
-                                })
-                                .then(function (data) {
-                                    return ('『' + data.hitokoto + '』');// + '<br /> <strong>'+ '——' + '「' + data.from + '」' + '</strong>');
-                                })
-                                .catch(function (err) {
-                                    console.error(err);
-                                })
-                            await typed(hitokotoContent)
-                        }
-                        hitokoto()
-                    </script>
+                    <!-- KITOHUANG的Personal blog，里面有学习中的各种案案例、思想随笔记录，分享EXCEL表格技巧、Python爬虫，交流各种写作技巧，或者每日新鲜事 # 当hitokoto失效时，不再显示description,改为显示今日诗词 -->
+                    <span id="jinrishici-sentence">大雾四起，我在无人知处爱你。</span>
+                    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
                 
             </div>
             
@@ -396,20 +365,20 @@
                 
                 
                 
-                <a href="/categories/Excel/" title="Excel: 1">
+                <a href="/categories/HEXO/" title="HEXO: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F9EBEA;">Excel
-                        <span class="tag-length">1</span>
+                             chip-default "
+                            style="background-color: #F9EBEA;">HEXO
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/HEXO/" title="HEXO: 3">
+                <a href="/categories/Excel/" title="Excel: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">HEXO
-                        <span class="tag-length">3</span>
+                             chip-active "
+                            style="background-color: #F5EEF8;">Excel
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -441,11 +410,11 @@
                 </a>
                 
                 
-                <a href="/categories/%E9%9A%8F%E6%83%B3%E5%BD%95/" title="随想录: 2">
+                <a href="/categories/%E9%9A%8F%E6%83%B3%E5%BD%95/" title="随想录: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F8F9F9;">随想录
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 

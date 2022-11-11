@@ -384,40 +384,9 @@
                 
                 <!-- 一言 -->
                 
-                    <span id="hitokoto" style="font-size: 20px;"></span>
-                    <!-- 打字机 -->
-                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-                    <script>
-                        var hitokotoContent = ''
-                        function typed(hitokotoContent) {
-                            var typed = new Typed("#hitokoto", {
-                                strings: [
-                                    hitokotoContent
-                                ],
-                                startDelay: 300,
-                                typeSpeed: 100,
-                                loop: false,
-                                backSpeed: 50,
-                                showCursor: true
-                            });
-                        }
-                        async function hitokoto() {
-                            hitokotoContent = await fetch('https://v1.hitokoto.cn')
-                                .then(function (res) {
-                                    return res.json();
-                                })
-                                .then(function (data) {
-                                    return ('『' + data.hitokoto + '』');// + '<br /> <strong>'+ '——' + '「' + data.from + '」' + '</strong>');
-                                })
-                                .catch(function (err) {
-                                    console.error(err);
-                                })
-                            await typed(hitokotoContent)
-                        }
-                        hitokoto()
-                    </script>
+                    <!-- KITOHUANG的Personal blog，里面有学习中的各种案案例、思想随笔记录，分享EXCEL表格技巧、Python爬虫，交流各种写作技巧，或者每日新鲜事 # 当hitokoto失效时，不再显示description,改为显示今日诗词 -->
+                    <span id="jinrishici-sentence">大雾四起，我在无人知处爱你。</span>
+                    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
                 
             </div>
             
@@ -482,30 +451,6 @@
         
             
             <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('/images/5.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">Excel数据表函数基本操作</div>
-                            <div class="description center-align">
-                                
-                                    VLOOKUP 函数基本用法=VLOOKUP (要查找的项、要查找位置、区域中包含要返回的值的列号、返回近似匹配或精确匹配 - 指示为 1/TRUE 或 0/FALSE) 。
-=VLOOKUP (lookup_value, table_ar
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2022/04/25/excel-shu-ju-biao-han-shu-ji-ben-cao-zuo/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
                  style="background-image: url('/images/2.jpg');">
                 <div class="container">
                     <div class="row">
@@ -520,6 +465,30 @@
                             </div>
                             <div class="cover-btns">
                                 <a href="/2022/04/16/hexo-kuang-jia-da-jian-ben-di-bo-ke-bu-zou-yi/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/images/5.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">Excel数据表函数基本操作</div>
+                            <div class="description center-align">
+                                
+                                    VLOOKUP 函数基本用法=VLOOKUP (要查找的项、要查找位置、区域中包含要返回的值的列号、返回近似匹配或精确匹配 - 指示为 1/TRUE 或 0/FALSE) 。
+=VLOOKUP (lookup_value, table_ar
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2022/04/25/excel-shu-ju-biao-han-shu-ji-ben-cao-zuo/" class="waves-effect waves-light btn"
                                    target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
@@ -584,53 +553,6 @@ git confi
         
             
             <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('/images/5.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">Python快排实现原理及代码</div>
-                            <div class="description center-align">
-                                
-                                    快排原理在一串数组中选择任意一个数字为基准，将数组的数据和基准数据相比较，比基准大的数据在基准数字的右边，比基准小的数据在基准的左边，此时基准元素位于正确的位置，它无需参与排序，接着对拆分的数组进行递归，再次进行快速排序，直到序列中的所有记
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2022/04/24/python-kuai-pai-shi-xian-yuan-li-ji-dai-ma/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('/images/4.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">Python连接MySQL并执行操作</div>
-                            <div class="description center-align">
-                                
-                                    什么是MySQLdb?MySQLdb 是用于Python链接Mysql数据库的接口，它实现了 Python 数据库 API 规范 V2.0，基于 MySQL C API 上建立的。
-创建SQL数据库在连接数据库之前确认自己已经做了以下事项：
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2022/04/21/python-lian-jie-mysql-bing-zhi-xing-cao-zuo/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
                  style="background-image: url('/images/2.jpg');">
                 <div class="container">
                     <div class="row">
@@ -644,6 +566,29 @@ git confi
                             </div>
                             <div class="cover-btns">
                                 <a href="/2022/04/30/python-pandas-note/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/images/5.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">Python快排实现原理及代码</div>
+                            <div class="description center-align">
+                                
+                                    快排原理在一串数组中选择任意一个数字为基准，将数组的数据和基准数据相比较，比基准大的数据在基准数字的右边，比基准小的数据在基准的左边，此时基准元素位于正确的位置，它无需参与排序，接着对拆分的数组进行递归，再次进行快速排序，直到序列中的所有记
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2022/04/24/python-kuai-pai-shi-xian-yuan-li-ji-dai-ma/" class="waves-effect waves-light btn"
                                    target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
@@ -674,6 +619,30 @@ CSS源码&lt;style&gt;
                             </div>
                             <div class="cover-btns">
                                 <a href="/2022/04/30/accordion-te-xiao/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/images/4.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">Python连接MySQL并执行操作</div>
+                            <div class="description center-align">
+                                
+                                    什么是MySQLdb?MySQLdb 是用于Python链接Mysql数据库的接口，它实现了 Python 数据库 API 规范 V2.0，基于 MySQL C API 上建立的。
+创建SQL数据库在连接数据库之前确认自己已经做了以下事项：
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2022/04/21/python-lian-jie-mysql-bing-zhi-xing-cao-zuo/" class="waves-effect waves-light btn"
                                    target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
@@ -869,6 +838,56 @@ CSS源码&lt;style&gt;
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/11/11/wei-zi-lu-zui-zhong-cang-bai-wu-li/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="伪自律最终苍白无力">
+                            
+                            <span class="card-title">伪自律最终苍白无力</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                不知道从什么时候开始，记忆越来越差了，我很难专注的想起一个事情，似乎关于某些记忆，总有一层东西阻隔着我。脑子变得昏昏沉沉的，从深处的痛感和疲惫感让我没办去思考。
+于是我又抽回了烟，烟雾混合着尼古丁进入体内，那种辛辣和刺激感从神经传递到大脑，
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E9%9A%8F%E6%83%B3%E5%BD%95/" class="post-category">
+                                    随想录
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%AF%8F%E6%97%A5%E9%9A%8F%E7%AC%94/">
+                            <span class="chip bg-color">每日随笔</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
             
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
@@ -1104,58 +1123,6 @@ CSS源码&lt;style&gt;
                         </div>
                     </div>
 
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/05/07/zheng-ze-biao-da-shi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="正则表达式（其一）">
-                            
-                            <span class="card-title">正则表达式（其一）</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                python的正则表达式python的re模块提供perl风格的的正则表达式，这里简单写一下正则表达的处理函数。
-re.matchre.match(pattern, string, flags&#x3D;0)
-#pattern:匹配表达式
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE/">
-                            <span class="chip bg-color">正则表达</span>
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>

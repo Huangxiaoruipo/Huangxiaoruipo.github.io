@@ -331,40 +331,9 @@
                 
                 <!-- 一言 -->
                 
-                    <span id="hitokoto" style="font-size: 20px;"></span>
-                    <!-- 打字机 -->
-                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-                    <script>
-                        var hitokotoContent = ''
-                        function typed(hitokotoContent) {
-                            var typed = new Typed("#hitokoto", {
-                                strings: [
-                                    hitokotoContent
-                                ],
-                                startDelay: 300,
-                                typeSpeed: 100,
-                                loop: false,
-                                backSpeed: 50,
-                                showCursor: true
-                            });
-                        }
-                        async function hitokoto() {
-                            hitokotoContent = await fetch('https://v1.hitokoto.cn')
-                                .then(function (res) {
-                                    return res.json();
-                                })
-                                .then(function (data) {
-                                    return ('『' + data.hitokoto + '』');// + '<br /> <strong>'+ '——' + '「' + data.from + '」' + '</strong>');
-                                })
-                                .catch(function (err) {
-                                    console.error(err);
-                                })
-                            await typed(hitokotoContent)
-                        }
-                        hitokoto()
-                    </script>
+                    <!-- KITOHUANG的Personal blog，里面有学习中的各种案案例、思想随笔记录，分享EXCEL表格技巧、Python爬虫，交流各种写作技巧，或者每日新鲜事 # 当hitokoto失效时，不再显示description,改为显示今日诗词 -->
+                    <span id="jinrishici-sentence">大雾四起，我在无人知处爱你。</span>
+                    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
                 
             </div>
             
@@ -393,6 +362,58 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/07/zheng-ze-biao-da-shi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="正则表达式（其一）">
+                            
+                            <span class="card-title">正则表达式（其一）</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                python的正则表达式python的re模块提供perl风格的的正则表达式，这里简单写一下正则表达的处理函数。
+re.matchre.match(pattern, string, flags&#x3D;0)
+#pattern:匹配表达式
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE/">
+                            <span class="chip bg-color">正则表达</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
             
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
@@ -696,59 +717,6 @@ CSS源码&lt;style&gt;
                         
                         <a href="/tags/SUMIFS/">
                             <span class="chip bg-color">SUMIFS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/04/24/python-kuai-pai-shi-xian-yuan-li-ji-dai-ma/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Python快排实现原理及代码">
-                            
-                            <span class="card-title">Python快排实现原理及代码</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                快排原理在一串数组中选择任意一个数字为基准，将数组的数据和基准数据相比较，比基准大的数据在基准数字的右边，比基准小的数据在基准的左边，此时基准元素位于正确的位置，它无需参与排序，接着对拆分的数组进行递归，再次进行快速排序，直到序列中的所有记
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Python/">
-                            <span class="chip bg-color">Python</span>
-                        </a>
-                        
-                        <a href="/tags/quicksort/">
-                            <span class="chip bg-color">quicksort</span>
                         </a>
                         
                     </div>
